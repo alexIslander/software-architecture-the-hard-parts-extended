@@ -10,7 +10,7 @@ Legend: `Not Started` | `In Progress` | `Adjusted` | `Validated`
 | `phone-tag-saga` | Not Started | TBD | TBD | `mvn -pl order-placement test` | TBD | |
 | `parallel-saga` | Not Started | TBD | TBD | `mvn -pl orchestrator test` | TBD | |
 | `fairy-tale-saga` | Validated | `871a477` | 1 | `mvn -pl saga-shared test -Dtest=EventSchemaConformanceTests` | Pass | Added `saga-shared/src/main/resources/saga-implementation.properties` with fairy-tale coordinates |
-| `time-travel-saga` | Not Started | TBD | TBD | `mvn -pl order-placement test` | TBD | |
+| `time-travel-saga` | Validated | `91c55fa` | 1 | `mvn -pl saga-shared test -Dtest=EventSchemaConformanceTests` | Pass | Added `saga-shared/src/main/resources/saga-implementation.properties` with time-travel coordinates |
 | `fantasy-fiction-saga` | Not Started | TBD | TBD | `mvn -pl orchestrator test` | TBD | |
 | `horror-story-saga` | Not Started | TBD | TBD | `mvn -pl order-placement test` | TBD | |
 
