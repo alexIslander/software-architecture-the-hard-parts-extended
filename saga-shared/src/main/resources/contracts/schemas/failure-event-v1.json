@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kurron.org/contracts/failure-event-v1.json",
+  "title": "Failure Event",
+  "type": "object",
+  "required": ["eventId", "correlationId", "orderId", "stage", "reason", "createdAt"],
+  "properties": {
+    "eventId": { "type": "string", "minLength": 1 },
+    "correlationId": { "type": "string", "minLength": 1 },
+    "orderId": { "type": "string", "format": "uuid" },
+    "stage": { "type": "string", "enum": ["ORDER", "PAYMENT", "FULFILLMENT", "EMAIL"] },
+    "reason": { "type": "string", "minLength": 1 },
+    "createdAt": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}

@@ -9,7 +9,20 @@ endif::[]
 == Overview
 This project are simple implementations of the eight transaction saga pattern described in link:/[Software Architecture: The Hard Parts]. I've done this to help me better understand the trade-offs of each type. You'll find a branch for each implementation, where the branch name mirrors the pattern name, e.g. `phone-tag`.
 
-[cols="5*"]
+== Branch Navigation
+Use this repository with branch-per-saga intent:
+
+* `main`: shared baseline and cross-cutting docs.
+* `epic-saga`: synchronous, atomic, orchestrated.
+* `phone-tag-saga`: synchronous, atomic, choreographed.
+* `fairy-tale-saga`: synchronous, eventual, orchestrated.
+* `time-travel-saga`: synchronous, eventual, choreographed.
+* `fantasy-fiction-saga`: asynchronous, atomic, orchestrated.
+* `horror-story-saga`: asynchronous, atomic, choreographed.
+* `parallel-saga`: asynchronous, eventual, orchestrated.
+* `anthology-saga`: asynchronous, eventual, choreographed.
+
+[cols="4*"]
 |===
 | Pattern Name | Communication | Consistency | Coordination | Branch Name
 
@@ -93,16 +106,13 @@ This project are simple implementations of the eight transaction saga pattern de
 
 |===
 
-== Implementation
-To meet the requirements of the Epic Saga, we're using the Service-Based architectural style. Details are documented in the ADRs.
-
 == Prerequisites
 * JDK 21 or greater
 
 == Building
-* `./mvnw -DskipTests --batch-mode --update-snapshots --errors clean package spring-boot:build-image`
-* `./mvnw -DskipTests --batch-mode --update-snapshots --errors clean install`
-* `./mvnw -pl gurps-online spring-boot:run`
+* `mvn clean verify`
+* `mvn clean package -DskipTests`
+* `mvn -pl orchestrator spring-boot:run`
 
 == Installation
 

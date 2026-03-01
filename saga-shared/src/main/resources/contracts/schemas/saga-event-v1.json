@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kurron.org/contracts/saga-event-v1.json",
+  "title": "Saga Event",
+  "type": "object",
+  "required": ["eventId", "correlationId", "orderId", "eventType", "createdAt", "payload"],
+  "properties": {
+    "eventId": { "type": "string", "minLength": 1 },
+    "correlationId": { "type": "string", "minLength": 1 },
+    "orderId": { "type": "string", "format": "uuid" },
+    "eventType": { "type": "string", "minLength": 1 },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "payload": { "type": "object" }
+  },
+  "additionalProperties": false
+}
