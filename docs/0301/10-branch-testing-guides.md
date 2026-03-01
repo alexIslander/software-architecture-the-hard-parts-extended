@@ -34,13 +34,17 @@ Scope: test execution before Java 25 / Spring Boot 4 migration.
 
 ## phone-tag-saga
 - Prerequisites: JDK 21+, Docker running.
-- Infra startup command: Planned.
-- App startup commands: Planned.
-- Happy-path test command: Planned.
-- Failure-path test command: Planned.
-- Resume/recovery command: Planned.
-- Teardown command: Planned.
-- Expected outputs: Planned.
+- Infra startup command: `docker compose up -d`.
+- App startup commands:
+  - `mvn -pl order-placement spring-boot:run`
+  - `mvn -pl payment spring-boot:run`
+  - `mvn -pl fulfillment spring-boot:run`
+  - `mvn -pl email spring-boot:run`
+- Happy-path test command: `mvn -pl order-placement test -Dtest=PhoneTagSagaIntegrationTests#happy\\ path\\ reaches\\ EMAIL_OK`.
+- Failure-path test command: `mvn -pl order-placement test -Dtest=PhoneTagSagaIntegrationTests#fulfillment\\ failure\\ triggers\\ payment\\ compensation`.
+- Resume/recovery command: `mvn -pl order-placement test -Dtest=PhoneTagSagaIntegrationTests#resume\\ recovers\\ after\\ transient\\ payment\\ outage`.
+- Teardown command: `docker compose down`.
+- Expected outputs: order-owned synchronous workflow reaches `EMAIL_OK` on success, enforces atomic outcome through compensation on downstream failures, and recovers using `resume` after transient outages.
 
 ## parallel-saga
 - Prerequisites: JDK 21+, Docker running.
