@@ -7,7 +7,7 @@ Legend: `Not Started` | `In Progress` | `Adjusted` | `Validated`
 |---|---|---|---:|---|---|---|
 | `epic-saga` | Validated | `2f5bd23` | 49 | `mvn -pl saga-shared test -Dtest=EventSchemaConformanceTests` | Pass | Added `saga-shared/src/main/resources/saga-implementation.properties` with epic coordinates |
 | `anthology-saga` | Validated | `2c667b1` | 42 | `mvn -pl saga-shared test -Dtest=EventSchemaConformanceTests` | Pass | Added `saga-shared/src/main/resources/saga-implementation.properties` with anthology coordinates |
-| `phone-tag-saga` | Not Started | TBD | TBD | `mvn -pl order-placement test` | TBD | |
+| `phone-tag-saga` | Validated | `ad21ea5` | 42 | `mvn -pl saga-shared test -Dtest=EventSchemaConformanceTests` | Pass | Added `saga-shared/src/main/resources/saga-implementation.properties` with phone-tag coordinates |
 | `parallel-saga` | Not Started | TBD | TBD | `mvn -pl orchestrator test` | TBD | |
 | `fairy-tale-saga` | Validated | `871a477` | 1 | `mvn -pl saga-shared test -Dtest=EventSchemaConformanceTests` | Pass | Added `saga-shared/src/main/resources/saga-implementation.properties` with fairy-tale coordinates |
 | `time-travel-saga` | Validated | `91c55fa` | 1 | `mvn -pl saga-shared test -Dtest=EventSchemaConformanceTests` | Pass | Added `saga-shared/src/main/resources/saga-implementation.properties` with time-travel coordinates |
