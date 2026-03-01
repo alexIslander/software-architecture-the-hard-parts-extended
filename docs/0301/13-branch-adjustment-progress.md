@@ -11,7 +11,7 @@ Legend: `Not Started` | `In Progress` | `Adjusted` | `Validated`
 | `parallel-saga` | Not Started | TBD | TBD | `mvn -pl orchestrator test` | TBD | |
 | `fairy-tale-saga` | Validated | `871a477` | 1 | `mvn -pl saga-shared test -Dtest=EventSchemaConformanceTests` | Pass | Added `saga-shared/src/main/resources/saga-implementation.properties` with fairy-tale coordinates |
 | `time-travel-saga` | Validated | `91c55fa` | 1 | `mvn -pl saga-shared test -Dtest=EventSchemaConformanceTests` | Pass | Added `saga-shared/src/main/resources/saga-implementation.properties` with time-travel coordinates |
-| `fantasy-fiction-saga` | Not Started | TBD | TBD | `mvn -pl orchestrator test` | TBD | |
+| `fantasy-fiction-saga` | Validated | `3e8294b` | 1 | `mvn -pl saga-shared test -Dtest=EventSchemaConformanceTests` | Pass | Added `saga-shared/src/main/resources/saga-implementation.properties` with fantasy-fiction coordinates |
 | `horror-story-saga` | Not Started | TBD | TBD | `mvn -pl order-placement test` | TBD | |
 
 ## Baseline Snapshot
