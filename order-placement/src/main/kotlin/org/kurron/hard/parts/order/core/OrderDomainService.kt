@@ -27,6 +27,8 @@ class OrderDomainService {
 
     fun find(orderId: UUID): OrderRecord? = orders[orderId]
 
+    fun pendingEventCount(orderId: UUID): Int = pendingEvents[orderId]?.size ?: 0
+
     fun applyEvent(event: SagaEvent) {
         if (!processedEventIds.add(event.eventId)) {
             return

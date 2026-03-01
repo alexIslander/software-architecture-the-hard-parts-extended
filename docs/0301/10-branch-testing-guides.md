@@ -26,11 +26,11 @@ Scope: test execution before Java 25 / Spring Boot 4 migration.
   - `mvn -pl payment spring-boot:run`
   - `mvn -pl fulfillment spring-boot:run`
   - `mvn -pl email spring-boot:run`
-- Happy-path test command: `mvn -pl order-placement test -Dtest=OrderChoreographyTests`.
-- Failure-path test command: `mvn -pl fulfillment test -Dtest=FulfillmentDomainServiceTests`.
-- Resume/recovery command: `mvn -pl order-placement test -Dtest=OrderChoreographyTests`.
+- Happy-path test command: `mvn -pl order-placement test -Dtest=OrderChoreographyTests,AnthologySagaProjectionTests`.
+- Failure-path test command: `mvn -pl order-placement test -Dtest=AnthologySagaProjectionTests#failure\\ event\\ marks\\ projection\\ and\\ duplicate\\ is\\ ignored`.
+- Resume/recovery command: `mvn -pl order-placement test -Dtest=AnthologySagaProjectionTests#projection\\ keeps\\ pending\\ count\\ until\\ dependencies\\ arrive`.
 - Teardown command: `docker compose down`.
-- Expected outputs: duplicate events are ignored, out-of-order events reconcile, and compensation is applied for email-stage failures.
+- Expected outputs: duplicate events are ignored, out-of-order choreography events reconcile eventually, and projection endpoints expose pending and final status transitions without centralized orchestration.
 
 ## phone-tag-saga
 - Prerequisites: JDK 21+, Docker running.
