@@ -44,13 +44,18 @@ Scope: test execution before Java 25 / Spring Boot 4 migration.
 
 ## parallel-saga
 - Prerequisites: JDK 21+, Docker running.
-- Infra startup command: Planned.
-- App startup commands: Planned.
-- Happy-path test command: Planned.
-- Failure-path test command: Planned.
-- Resume/recovery command: Planned.
-- Teardown command: Planned.
-- Expected outputs: Planned.
+- Infra startup command: `docker compose up -d`.
+- App startup commands:
+  - `mvn -pl orchestrator spring-boot:run`
+  - `mvn -pl order-placement spring-boot:run`
+  - `mvn -pl payment spring-boot:run`
+  - `mvn -pl fulfillment spring-boot:run`
+  - `mvn -pl email spring-boot:run`
+- Happy-path test command: `mvn -pl orchestrator test -Dtest=ParallelSagaIntegrationTests#parallel\\ advancement\\ reaches\\ EMAIL_OK\\ without\\ compensation`.
+- Failure-path test command: `mvn -pl orchestrator test -Dtest=ParallelSagaIntegrationTests#partial\\ parallel\\ failure\\ keeps\\ successful\\ branch\\ and\\ resumes\\ eventually`.
+- Resume/recovery command: `mvn -pl orchestrator test -Dtest=ParallelSagaIntegrationTests#transient\\ parallel\\ stage\\ outage\\ recovers\\ with\\ repeated\\ advance`.
+- Teardown command: `docker compose down`.
+- Expected outputs: workflow starts at `STARTED`, advances through parallel payment+fulfillment progress, and reaches `EMAIL_OK` through repeated `advance`/`resume` without compensation.
 
 ## fairy-tale-saga
 - Prerequisites: JDK 21+, Docker running.
