@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kurron.org/contracts/service-result-v1.json",
+  "title": "Service Result",
+  "type": "object",
+  "required": ["orderId", "correlationId", "success", "details"],
+  "properties": {
+    "orderId": { "type": "string", "format": "uuid" },
+    "correlationId": { "type": "string" },
+    "success": { "type": "boolean" },
+    "details": { "type": "string" }
+  },
+  "additionalProperties": false
+}
