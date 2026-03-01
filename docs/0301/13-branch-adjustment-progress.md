@@ -1,0 +1,19 @@
+# Branch Adjustment Progress
+
+Date: 2026-03-01
+Legend: `Not Started` | `In Progress` | `Adjusted` | `Validated`
+
+| Branch | Status | Adjustment Commit | Code Delta vs `main` | Test Command | Test Result | Notes |
+|---|---|---|---:|---|---|---|
+| `epic-saga` | Not Started | TBD | TBD | `mvn -pl orchestrator test -Dtest=EpicSagaIntegrationTests` | TBD | |
+| `anthology-saga` | Not Started | TBD | TBD | `mvn -pl order-placement test -Dtest=OrderChoreographyTests` | TBD | |
+| `phone-tag-saga` | Not Started | TBD | TBD | `mvn -pl order-placement test` | TBD | |
+| `parallel-saga` | Not Started | TBD | TBD | `mvn -pl orchestrator test` | TBD | |
+| `fairy-tale-saga` | Not Started | TBD | TBD | `mvn -pl orchestrator test` | TBD | |
+| `time-travel-saga` | Not Started | TBD | TBD | `mvn -pl order-placement test` | TBD | |
+| `fantasy-fiction-saga` | Not Started | TBD | TBD | `mvn -pl orchestrator test` | TBD | |
+| `horror-story-saga` | Not Started | TBD | TBD | `mvn -pl order-placement test` | TBD | |
+
+## Baseline Snapshot
+- Branches currently identical to `main`: `fairy-tale-saga`, `time-travel-saga`, `fantasy-fiction-saga`, `horror-story-saga`.
+- Priority order: adjust identical branches first.
