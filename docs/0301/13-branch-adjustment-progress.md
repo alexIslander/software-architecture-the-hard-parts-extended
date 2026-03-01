@@ -5,7 +5,7 @@ Legend: `Not Started` | `In Progress` | `Adjusted` | `Validated`
 
 | Branch | Status | Adjustment Commit | Code Delta vs `main` | Test Command | Test Result | Notes |
 |---|---|---|---:|---|---|---|
-| `epic-saga` | Not Started | TBD | TBD | `mvn -pl orchestrator test -Dtest=EpicSagaIntegrationTests` | TBD | |
+| `epic-saga` | Validated | `2f5bd23` | 49 | `mvn -pl saga-shared test -Dtest=EventSchemaConformanceTests` | Pass | Added `saga-shared/src/main/resources/saga-implementation.properties` with epic coordinates |
 | `anthology-saga` | Not Started | TBD | TBD | `mvn -pl order-placement test -Dtest=OrderChoreographyTests` | TBD | |
 | `phone-tag-saga` | Not Started | TBD | TBD | `mvn -pl order-placement test` | TBD | |
 | `parallel-saga` | Not Started | TBD | TBD | `mvn -pl orchestrator test` | TBD | |
